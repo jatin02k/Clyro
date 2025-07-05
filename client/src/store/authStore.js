@@ -19,13 +19,23 @@ export const useAuth = create(
           const res = await api.get("/auth/check");
           set({ authUser: res.data, isLoading: false });
         } catch (error) {
-          const errorMessage = error.response?.data?.message || "Authentication check failed";
-          set({ 
-            authUser: null, 
-            isLoading: false, 
-            error: errorMessage 
-          });
-          console.error("error in checkAuth:", error);
+          // Handle 401 (Unauthorized) gracefully - this is normal when not logged in
+          if (error.response?.status === 401) {
+            set({ 
+              authUser: null, 
+              isLoading: false, 
+              error: null // Don't set error for normal unauthorized state
+            });
+          } else {
+            // Only set error for actual errors (network issues, server errors, etc.)
+            const errorMessage = error.response?.data?.message || "Authentication check failed";
+            set({ 
+              authUser: null, 
+              isLoading: false, 
+              error: errorMessage 
+            });
+            console.error("error in checkAuth:", error);
+          }
         }
       },
 

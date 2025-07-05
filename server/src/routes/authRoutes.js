@@ -4,12 +4,7 @@ import {
   login,
   logout,
 } from "../controllers/authController.js";
-<<<<<<< HEAD
 import { isLoggedIn } from '../middlewares/isLoggedIn.js'
-=======
-import { isLoggedIn } from "../../middlewares/isLoggedIn.js"; 
-
->>>>>>> 92a5e80fda19eba95b7eec5bc3ca412243c1203f
 const router = express.Router();
 
 // create CRUD operation routes
