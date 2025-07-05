@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 // Email validation regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Password validation regex (at least 6 chars, 1 uppercase, 1 lowercase, 1 number)
+// Password validation regex (at least 6 chars)
 const passwordRegex = /^.{6,}$/;
 
 export const signup = async (req, res) => {
@@ -23,7 +23,7 @@ export const signup = async (req, res) => {
 
     if (!passwordRegex.test(password)) {
       return res.status(400).json({ 
-        message: "Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, and one number" 
+        message: "Password must be at least 6 characters long" 
       });
     }
 
@@ -117,4 +117,4 @@ export const logout = async (req, res) => {
     console.error("Error in logout:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
-};
+}; 
