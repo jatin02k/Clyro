@@ -22,20 +22,21 @@ const app = express();
 
 // Middleware
 const allowedOrigins = [
-    process.env.CLIENT_URL,
-    "http://localhost:3000", // local dev
-    "https://clyro-task-manager-tool.vercel.app" // your deployed frontend
-];
-app.use(cors({
+    "http://localhost:3000",
+    "https://clyro-task-manager-tool-mc7iusjwr-jatin02kr-gmailcoms-projects.vercel.app"
+  ];
+  
+  app.use(cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error("Not allowed by CORS"));
+        callback(new Error("CORS not allowed"));
       }
     },
-    credentials: true // if you use cookies/auth
+    credentials: true
   }));
+
 app.use(express.json());
 app.use(cookieParser());
 
