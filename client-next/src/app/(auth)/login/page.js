@@ -54,7 +54,6 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('Attempting login with:', formData);
       const result = await login(formData);
       if (result?.success) {
         router.push('/home');
@@ -62,6 +61,7 @@ function Login() {
     }
   };
 
+  // Show the login form immediately, only disable inputs during login request
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-700">
       <form
@@ -86,9 +86,7 @@ function Login() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`input input-bordered w-full mt-2 ${
-              errors.email ? "border-red-500" : ""
-            }`}
+            className={`input input-bordered w-full mt-2 ${errors.email ? "border-red-500" : ""}`}
             placeholder="mail@site.com"
             disabled={isLoading}
           />
@@ -105,9 +103,7 @@ function Login() {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className={`input input-bordered w-full mt-2 ${
-              errors.password ? "border-red-500" : ""
-            }`}
+            className={`input input-bordered w-full mt-2 ${errors.password ? "border-red-500" : ""}`}
             placeholder="Password"
             disabled={isLoading}
           />
