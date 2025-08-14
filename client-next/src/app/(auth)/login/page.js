@@ -123,7 +123,7 @@ function Login() {
 
         {/* Sign Up Link */}
         <p className="mt-4 text-center text-gray-600">
-          Don&apos;t have an account?{" "}
+          Do not have an account?{" "}
           <Link href="/signup" className="text-blue-600 hover:underline">
             Sign up
           </Link>
