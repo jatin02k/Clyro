@@ -23,15 +23,18 @@ const app = express();
 // Middleware
 const allowedOrigins = [
     process.env.CLIENT_URL,
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://localhost:3002"
-  ];
-  app.use(cors({
-    origin: allowedOrigins,
-    credentials: true
+    "http://localhost:3000", // local dev
+    "https://clyro-task-manager-tool.vercel.app" // your deployed frontend
+];
+app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true // if you use cookies/auth
   }));
 app.use(express.json());
 app.use(cookieParser());
@@ -46,7 +49,7 @@ const connectToMongoDB = async () => {
             console.log('📝 Example: MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/task-manager');
             process.exit(1);
         }
-        
+
         await mongoose.connect(process.env.MONGO_URI);
         console.log('✅ Connected to MongoDB successfully');
     } catch (error) {
