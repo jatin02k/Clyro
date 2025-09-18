@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Task Manager",
-  description: "A simple task management application",
+  title: "Clyro Manager",
+  description: "A simple management application",
 };
 
 export default function RootLayout({ children }) {
