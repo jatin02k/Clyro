@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <div className="w-full bg-base-100 shadow-md">
       <div className="max-w-10xl mx-auto flex items-center justify-between px-4 py-3">
-        <a href="/home" className="text-xl font-semibold text-gray-300">TaskManager</a>
+        <a href="/home" className="text-xl font-semibold text-gray-300">Clyro Manager</a>
         <button onClick={handleLogout} className="btn btn-primary">Logout</button>
       </div>
     </div>

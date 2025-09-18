@@ -21,7 +21,7 @@ export default function TaskPreview({ task }) {
     return (
       <div className="bg-white p-4 rounded shadow">
         <div className="text-center py-8 text-gray-500">
-          <p>Select a task to view details</p>
+          <p>Select a Entry to view details</p>
         </div>
       </div>
     );

@@ -47,31 +47,30 @@ export default function TaskList() {
     <div className="bg-white p-4 rounded shadow">
       {/* Header with New Task button - ALWAYS VISIBLE */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-bold text-black">Your Tasks</h2>
+        <h2 className="text-lg font-bold text-black">My Entries</h2>
         <button 
           onClick={() => setShowForm(true)}
           className="btn btn-primary btn-sm"
         >
           <Plus className="h-4 w-4 mr-1" />
-          New Task
+          new
         </button>
       </div>
       
       {/* Create Task Form */}
       {showForm && (
         <div className="mb-4 p-4 border rounded bg-gray-50">
-          <h3 className="font-semibold mb-2 text-black">Create New Task</h3>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Task title"
+              placeholder="Title"
               value={formData.title}
               onChange={(e) => setFormData({...formData, title: e.target.value})}
               className="input input-bordered w-full mb-2"
               required
             />
             <textarea
-              placeholder="Task description"
+              placeholder="Description"
               value={formData.description}
               onChange={(e) => setFormData({...formData, description: e.target.value})}
               className="textarea textarea-bordered w-full mb-2"
@@ -79,7 +78,7 @@ export default function TaskList() {
             />
             <div className="flex gap-2">
               <button type="submit" className="btn btn-primary btn-sm">
-                Create Task
+                Create
               </button>
               <button 
                 type="button" 
@@ -106,7 +105,7 @@ export default function TaskList() {
           {/* Empty State */}
           {tasks.length === 0 ? (
             <div className="text-center py-8 text-gray-500">
-              <p>No tasks yet. Create your first task!</p>
+              <p>No Entries yet. Create your first Entry!</p>
             </div>
           ) : (
             /* Task List */
