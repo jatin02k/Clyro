@@ -1,4 +1,4 @@
-# Task Manager - Base Version
+# Clyro - A Manager App
 
 A secure, full-stack task management application built with modern web technologies.
 
@@ -6,19 +6,19 @@ A secure, full-stack task management application built with modern web technolog
 
 ### Current Features
 - ✅ **User Authentication** - Secure signup, login, and logout
-- ✅ **Task Management** - Create, read, update, delete tasks
-- ✅ **User Data Isolation** - Each user only sees their own tasks
+- ✅ **Notes/Tasks Management** - Create, read, update, delete entries
+- ✅ **User Data Isolation** - Each user only sees their own entries
 - ✅ **Responsive Design** - Works on desktop and mobile
 - ✅ **Real-time Updates** - Optimistic UI updates with error handling
 - ✅ **Secure API** - JWT authentication with protected routes
 
 ### Planned Features
-- [ ] Task categories and tags
+- [ ] Entries categories and tags
 - [ ] Due dates and reminders
-- [ ] Task priority levels
+- [ ] Entries priority levels
 - [ ] Search and advanced filtering
 - [ ] Team collaboration features
-- [ ] Task templates
+- [ ] Entries templates
 - [ ] Progress tracking
 - [ ] Email notifications
 - [ ] SaaS subscription model
@@ -27,6 +27,7 @@ A secure, full-stack task management application built with modern web technolog
 
 ### Frontend
 - **React 19** - Modern React with hooks
+- **Next.js 15** - Next.js is a React framework
 - **Vite** - Fast build tool and dev server
 - **Zustand** - Lightweight state management
 - **React Router** - Client-side routing
@@ -55,7 +56,7 @@ A secure, full-stack task management application built with modern web technolog
 1. **Clone the repository**
 ```bash
 git clone <your-repo-url>
-cd task-manager
+cd clyro
 ```
 
 2. **Install dependencies**
@@ -65,7 +66,7 @@ cd server
 npm install
 
 # Install client dependencies
-cd ../client
+cd ../client-next
 npm install
 ```
 
