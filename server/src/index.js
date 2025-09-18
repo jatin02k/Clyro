@@ -23,7 +23,7 @@ const app = express();
 // Middleware
 const allowedOrigins = [
     "http://localhost:3000",
-    "https://clyro-task-manager-tool-mc7iusjwr-jatin02kr-gmailcoms-projects.vercel.app"
+    "https://clyro-task-manager-tool.vercel.app"
   ];
   
   app.use(cors({
